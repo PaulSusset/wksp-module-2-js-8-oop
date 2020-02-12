@@ -4,13 +4,13 @@ class Dog {
     }
     
     run = () => {
-        this.eat();
+        this.food();
     }
     
     food = () => {
         this.hunger = this.hunger - 10;
     }
- }
+}
 
- let fido = new Dog();
- fido.run();
+let fido = new Dog();
+fido.run();

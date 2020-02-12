@@ -1,10 +1,11 @@
 class Dog {
     constructor() {
         this.hunger = 0;
+        this.food = 100
     }
     
     remaining = () => {
-        console.log(this.food.amount)
+        console.log(this.food)
     }
  }
 

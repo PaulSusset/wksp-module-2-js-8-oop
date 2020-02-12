@@ -151,7 +151,7 @@ class School {
     }
 
     noise = () => {
-        console.log("...The sound of students growing...")
+        console.log(`At ${this.name}, students are learning`)
     }
 }
 let concordiaBootcamps = new School('Concordia Bootcamps');
@@ -168,18 +168,18 @@ concordiaBootcamps.noise();
 ```js
 class Dog {
     constructor(voice) {
-        this.voice = voice;
+        this.voice = voice || 'bark';
     }
     noise = () => {
-        console.log('woof');
+        console.log(this.voice);
     }
     coolOff = () => {
         console.log('pant');
     }
 }
 
-let mastiff = new Dog();
-let terrier = new Dog();
+let mastiff = new Dog('WOOF!');
+let terrier = new Dog('yip');
 ```
 
 ---
@@ -215,10 +215,10 @@ class Car {
     constructor() {
         this.mileage = 0;
     }
-    drive = () => { this.mileage = this.mileage + 10 }
+    drive = (amount) => { this.mileage = this.mileage + amount }
 }
 let myCar = new Car();
-myCar.drive(); 
+myCar.drive(100); 
 ```
 
 ---
@@ -230,8 +230,23 @@ myCar.drive();
 // 2. How could we represent varying hunger levels based on activity?
 // 3. How about when it eats?
 class Animal {
-
+    constructor(name, hunger) {
+        this.name = name
+        this.hunger = hunger
+    }
+    eat = () => {
+        this.hunger = 'sated';
+    }
+    walk = () => {
+        if (this.hunger = 'sated'){
+            this.hunger = 'hungry';
+        } if (this.hunger = 'hungry'){
+            this.hunger = 'starving';
+        } if (this.hunger = 'starving'){
+            this.hunger = 'dead';
+        };
 }
+let Bear = new Animal(Barry, hungry)
 
 ```
 
@@ -267,7 +282,9 @@ class Male extends Human {
 // Create a bob object that is a HUMAN MALE
 let bob = new Male('Bob');
 ```
-
+can only have 1 parent class
+you can make multiple parents but only one at a time. in example you could extend human to class Mammal for example.
+extend brings the methods, super brings the constructor
 ---
 
 ## Exercise 1
